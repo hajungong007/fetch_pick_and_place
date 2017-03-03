@@ -1,0 +1,19 @@
+<launch>
+	<node name="find_grasps" pkg="agile_grasp" type="find_grasps" output="screen">
+  	<param name="cloud_topic" value="/base_cloud" />
+    <param name="cloud_frame" value="/base_link" />
+    <param name="cloud_type" value="0" />
+    <param name="svm_file_name" value="$(find agile_grasp)/svm_032015_20_20_same" />
+    <param name="num_samples" value="8000" />
+    <param name="num_threads" value="4" />
+    <param name="num_clouds" value="1" />
+		<rosparam param="workspace"> [0.50, 0.85, -0.25, 0.25, 0.78, 1.1] </rosparam>
+    <rosparam param="camera_pose"> [1.33096939e-03, -7.71520255e-01, 6.36203367e-01, 0.161, 
+              -9.99999000e-01, -1.33096939e-03, 4.77989006e-04, 0.020, 
+              4.77989006e-04, -6.36203367e-01, -7.71521255e-01, 1.396, 
+              0, 0, 0, 1] </rosparam>q
+    <param name="min_inliers" value="40" />
+    <param name="plotting" value="2" />
+    <param name="marker_lifetime" value="20" />
+	</node>
+</launch>
